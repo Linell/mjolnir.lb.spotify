@@ -11,6 +11,21 @@ function spotify.tell(cmd)
   return os.execute('osascript -e \'tell application "Spotify" to ' .. cmd .. "'")
 end
 
+function spotify.play()
+  spotify.tell('playpause')
+  alert.show(' ▶', 0.5)
+end
+function spotify.pause()
+  spotify.tell('pause')
+  alert.show(' ◼', 0.5)
+end
+function spotify.next()
+  spotify.tell('next track')
+end
+function spotify.previous()
+  spotify.tell('previous track')
+end
+
 function spotify.get(cmd)
   local handle = io.popen('osascript -e \'tell application "Spotify" to ' .. cmd .. "'")
   local result = handle:read("*a")
@@ -24,6 +39,7 @@ function spotify.displayCurrentTrack()
   track  = spotify.get('get the name of the current track')
   alert.show(track .. album .. artist, 1)
 end
+
 
 -- Always return your top-level module; never set globals.
 return spotify
