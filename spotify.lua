@@ -6,7 +6,6 @@
 
 local spotify = {}
 
-local application = require "mjolnir.application"
 local alert = require "mjolnir.alert"
 
 -- Internal function to pass a command to Applescript.
