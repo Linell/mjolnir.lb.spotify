@@ -55,7 +55,7 @@ function spotify.displayCurrentTrack()
   artist = get('get the artist of the current track')
   album  = get('get the album of the current track')
   track  = get('get the name of the current track')
-  alert.show(track .. album .. artist, 1)
+  alert.show(track .. album .. artist, 1.75)
 end
 
 return spotify
